@@ -25,10 +25,11 @@ public class CarDbService {
         return carJpaRepo.findAll();
     }
 
-    public String updateCarList(long chassis, String CarName){
+    public String updateCarList(long chassis, String CarName, float mfy){
 
-        AutoMobile autoMobile = carJpaRepo.getReferenceById(chassis);
+        AutoMobile autoMobile = carJpaRepo.getById(chassis);
         autoMobile.setCarName(CarName);
+        autoMobile.setMfy(mfy);
         carJpaRepo.save(autoMobile);
         return "Update data Successfully";
     }

@@ -25,11 +25,11 @@ public class CarDbController {
        return carDbService.getCarList();
     }
 
-    @PutMapping("/update_db_car/{chassis}/{CarName}")
+    @PutMapping("/update_db_car/{chassis}/{CarName}/{mfy}")
 
-    public String updateCarList(@PathVariable long chassis, @PathVariable String CarName){
+    public String updateCarList(@PathVariable long chassis, @PathVariable String CarName,@PathVariable float mfy){
 
-        return carDbService.updateCarList(chassis,CarName);
+        return carDbService.updateCarList(chassis,CarName,mfy);
     }
 
     @DeleteMapping("/delete_db_car")

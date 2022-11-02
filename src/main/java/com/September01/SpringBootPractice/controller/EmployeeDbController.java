@@ -28,16 +28,27 @@ public class EmployeeDbController {
 
     @PutMapping("/update_db_employee/{id}/{name}")
 
-    public String updateEmpList(@PathVariable long id,@PathVariable String name){
+    public String updateEmpList(@PathVariable long id, @PathVariable String name) {
 
         return employeeDbService.updateEmpList(id, name);
     }
 
     @DeleteMapping("/delete_db_employee")
 
-    public String deleteList(@RequestParam Long id){
+    public String deleteList(@RequestParam long id) {
 
         return employeeDbService.deleteList(id);
+    }
+
+    @GetMapping("/findbyname")
+    public EmployeeData findByName(@RequestParam String name) {
+
+        return employeeDbService.findByName(name);
+    }
+    @GetMapping("/findbydept")
+    public List<EmployeeData> findByDept(@RequestParam String dept){
+
+        return employeeDbService.findByDept(dept);
     }
 
 

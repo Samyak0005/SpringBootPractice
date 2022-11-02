@@ -24,7 +24,7 @@ public class AutoMobile {
 
 
     public AutoMobile(String CarName, float mfy, long price) {
-        CarName = CarName;
+        this.CarName = CarName;
         this.mfy = mfy;
         this.price = price;
     }
@@ -34,7 +34,7 @@ public class AutoMobile {
     }
 
     public void setCarName(String CarName) {
-        CarName = CarName;
+       this.CarName = CarName;
     }
 
     public float getMfy() {

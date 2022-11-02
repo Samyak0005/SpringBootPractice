@@ -39,9 +39,20 @@ public class EmployeeDbService {
         return "Successfully update data";
     }
 
-    public String deleteList(Long id) {
+    public String deleteList(long id) {
 
         employeeJpaRepo.deleteById(id);
         return "Delete data in database successfully";
     }
+
+    public EmployeeData findByName(String name){
+
+        return employeeJpaRepo.findByName(name);
+    }
+    public List<EmployeeData> findByDept(String dept){
+
+        return employeeJpaRepo.findByDept(dept);
+    }
+
+
 }
